@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding-top: 50px; }
+        .success-msg { color: green; font-weight: bold; font-size: 1.2em; }
+    </style>
+</head>
+<body>
+    {% if request.resolver_match.url_name == 'contact-success' %}
+        <div class="success-msg">
+            <h2>Thank You!</h2>
+            <p>Your message has been received. We will get back to you shortly.</p>
+        </div>
+    {% else %}
+        <h1>Welcome to World Tour</h1>
+        <p>Explore the world with our agency.</p>
+    {% endif %}
+
+    <nav>
+        <a href="{% url 'contact' %}">Contact Us</a>
+    </nav>
+</body>
+</html>
